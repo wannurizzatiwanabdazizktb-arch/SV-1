@@ -4,11 +4,13 @@ import streamlit as st
 banner_image = 'https://raw.githubusercontent.com/wannurizzatiwanabdazizktb-arch/SV-1/main/OnlineLearning.jpg' 
 st.image(banner_image, use_container_width=True)
 
+# Add a header title
+st.header("Impact of Online Learning During COVID-19")
+
 # Add the main introduction paragraph
 st.write(
     """
-    **Scientific Visualization** is a multidisciplinary field that focuses on transforming complex scientific data into visual forms that are easier to understand, interpret, and communicate. 
-    Through the use of computational techniques, visualization helps researchers explore datasets, identify hidden patterns, and gain insights that would otherwise remain obscure in numerical form.
+    **An analysis of student satisfaction, performance, and challenges during the pandemic.
     """
 )
 
