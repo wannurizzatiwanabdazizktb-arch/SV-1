@@ -1,7 +1,7 @@
 import streamlit as st
 
 # Add a banner image at the top
-banner_image = 'https://github.com/wannurizzatiwanabdazizktb-arch/SV-1/blob/main/Online%20Learning.jpg' 
+banner_image = 'https://raw.githubusercontent.com/wannurizzatiwanabdazizktb-arch/SV-1/refs/heads/main/studentSurvey.py' 
 st.image(banner_image, use_container_width=True)
 
 # Add the main introduction paragraph
