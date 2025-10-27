@@ -1,11 +1,11 @@
 import streamlit as st
 
+# Add a header title
+st.header("Impact of Online Learning During COVID-19")
+
 # Add a banner image at the top
 banner_image = 'https://raw.githubusercontent.com/wannurizzatiwanabdazizktb-arch/SV-1/main/OnlineLearning.jpg' 
 st.image(banner_image, use_container_width=True)
-
-# Add a header title
-st.header("Impact of Online Learning During COVID-19")
 
 # Add the main introduction paragraph
 st.write(
