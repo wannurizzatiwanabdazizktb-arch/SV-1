@@ -10,7 +10,7 @@ st.header("Impact of Online Learning During COVID-19")
 # Add the main introduction paragraph
 st.write(
     """
-    **An analysis of student satisfaction, performance, and challenges during the pandemic.
+    An analysis of student satisfaction, performance, and challenges during the pandemic.
     """
 )
 
