@@ -20,8 +20,13 @@ st.write(
     """
 )
 
+# Load CSV from GitHub
+url = "https://raw.githubusercontent.com/wannurizzatiwanabdazizktb-arch/SV-1/refs/heads/main/ONLINE%20EDUCATION%20SYSTEM%20REVIEW.csv"
+
 # Add the header title
 st.header("Demographic Overview")
 
 # Add the subtitle header
 st.subheader("1. Gender Distribution")
+
+
