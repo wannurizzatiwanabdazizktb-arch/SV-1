@@ -61,4 +61,5 @@ fig.add_annotation(
 
 fig.show()
 
-st.pyplot(fig)
+st.plotly_chart(fig, use_container_width=True)
+
