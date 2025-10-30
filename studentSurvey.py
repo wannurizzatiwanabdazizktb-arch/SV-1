@@ -14,53 +14,59 @@ if uploaded_file is not None:
     st.write("Preview of data:")
     st.dataframe(df)
 
-    # ==================================
-    # Choose the satisfaction column
-    # ==================================
-    score_column = st.selectbox("Select Satisfaction Score Column", df.columns)
+   import plotly.express as px
 
-    # ==================================
-    # Group by category/aspect
-    # ==================================
-    if st.checkbox("Group by category column?"):
-        category_column = st.selectbox("Select Category Column", df.columns)
-        avg_scores = df.groupby(category_column)[score_column].mean().reset_index()
-        x = avg_scores[category_column]
-        y = avg_scores[score_column]
-    else:
-        avg_scores = df
-        x = df.index
-        y = df[score_column]
+# Map satisfaction levels to numerical values
+satisfaction_mapping = {'Bad': 1, 'Average': 2, 'Good': 3}
+df['Satisfaction_Score'] = df['Your level of satisfaction in Online Education'].map(satisfaction_mapping)
 
-    # ==================================
-    # Color function (Blue = Good, Grey = Average, Red = Bad)
-    # ==================================
-    def get_color(score):
-        if score >= 4:
-            return "#1f77b4"  # blue (good)
-        elif score >= 2.5:
-            return "#7f7f7f"  # grey (average)
-        else:
-            return "#d62728"  # red (bad)
+# Group and calculate average satisfaction score per internet quality
+avg_satisfaction_by_internet = df.groupby(
+    'Internet facility in your locality'
+)['Satisfaction_Score'].mean().reset_index()
 
-    colors = y.apply(get_color)
+# Map internet facility labels
+internet_labels = {1: 'Very Poor', 2: 'Poor', 3: 'Average', 4: 'Good', 5: 'Excellent'}
+avg_satisfaction_by_internet['Internet Facility'] = avg_satisfaction_by_internet[
+    'Internet facility in your locality'
+].map(internet_labels)
 
-    # ==================================
-    # Plot
-    # ==================================
-    fig, ax = plt.subplots()
-    ax.bar(x, y, color=colors)
-    ax.set_ylabel("Average Satisfaction Score")
-    ax.set_title("Student Satisfaction for Online Learning")
+# Plot bar chart (BLUE → GREY → RED continuous palette)
+fig = px.bar(
+    avg_satisfaction_by_internet,
+    x='Internet Facility',
+    y='Satisfaction_Score',
+    title='Average Online Education Satisfaction by Internet Facility',
+    labels={
+        'Internet Facility': 'Internet Facility Quality',
+        'Satisfaction_Score': 'Average Satisfaction'
+    },
+    color='Satisfaction_Score',
+    color_continuous_scale='RdBu_r'  # Reverse to get Blue=Good, Red=Bad
+)
 
-    # Add legend
-    blue = mpatches.Patch(color="#1f77b4", label="Good (>= 4.0)")
-    grey = mpatches.Patch(color="#7f7f7f", label="Average (2.5 - 3.9)")
-    red = mpatches.Patch(color="#d62728", label="Bad (< 2.5)")
-    ax.legend(handles=[blue, grey, red])
+# Keep proper order
+fig.update_layout(
+    xaxis={
+        'categoryorder': 'array',
+        'categoryarray': [internet_labels[i] for i in sorted(internet_labels)]
+    },
+    width=800,
+    height=500,
+    coloraxis_colorbar=dict(title="Satisfaction Score"),
+)
 
-    # Rotate labels (optional)
-    plt.xticks(rotation=15)
+# Add legend explanation
+fig.add_annotation(
+    text="Scale: Red = Bad, Grey = Average, Blue = Good",
+    xref="paper", yref="paper",
+    x=0, y=-0.2,
+    showarrow=False,
+    font=dict(size=10)
+)
+
+fig.show()
+
 
     st.pyplot(fig)
 
