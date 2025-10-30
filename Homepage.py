@@ -60,7 +60,7 @@ fig.update_layout(
     legend_title="Gender"
 )
 
-fig.show()
+st.plotly_chart(fig, use_container_width=True)
 
 
 # =======================================
@@ -83,7 +83,7 @@ fig.update_layout(
     yaxis_title="Count"
 )
 
-fig.show()
+st.plotly_chart(fig, use_container_width=True)
 
 
 # =======================
@@ -103,7 +103,7 @@ fig.update_layout(
     bargap=0.2
 )
 
-fig.show()
+st.plotly_chart(fig, use_container_width=True)
 
 
 # ================================
@@ -125,7 +125,7 @@ fig.update_layout(
     yaxis_title="Count"
 )
 
-fig.show()
+st.plotly_chart(fig, use_container_width=True)
 
 
 # =========================
@@ -147,7 +147,7 @@ fig.update_layout(
     legend_title="Economic Class"
 )
 
-fig.show()
+st.plotly_chart(fig, use_container_width=True)
 
 
 
