@@ -4,17 +4,11 @@ import plotly.express as px
 
 st.header("Analysis of Students’ Satisfaction with Online Learning During COVID-19")
 
-# =========================
-# Load dataset
-# =========================
-uploaded_file = st.file_uploader("Upload CSV file", type=["csv"])
+# Load CSV from GitHub
+url = "https://raw.githubusercontent.com/wannurizzatiwanabdazizktb-arch/SV-1/refs/heads/main/ONLINE%20EDUCATION%20SYSTEM%20REVIEW.csv"
 
-if uploaded_file is not None:
-    df = pd.read_csv(uploaded_file)
-    st.write("Preview of data:")
-    st.dataframe(df)
-
-   import plotly.express as px
+# Read the dataset
+df = pd.read_csv(url)
 
 # Map satisfaction levels to numerical values
 satisfaction_mapping = {'Bad': 1, 'Average': 2, 'Good': 3}
@@ -67,8 +61,4 @@ fig.add_annotation(
 
 fig.show()
 
-
-    st.pyplot(fig)
-
-else:
-    st.info("Please upload a CSV to begin.")
+st.pyplot(fig)
