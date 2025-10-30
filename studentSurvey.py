@@ -96,3 +96,40 @@ fig.update_layout(
 )
 
 st.plotly_chart(fig, use_container_width=True)
+
+# --------------------------------------------------------------------
+
+# Create a cross-tabulation of clearing doubts and satisfaction level
+doubts_satisfaction_counts = pd.crosstab(
+    df['Clearing doubts with faculties in online mode'],
+    df['Your level of satisfaction in Online Education']
+)
+
+# Map clearing doubts levels to descriptive labels
+doubts_labels = {1: 'Very Difficult', 2: 'Difficult', 3: 'Average', 4: 'Easy', 5: 'Very Easy'}
+doubts_satisfaction_counts.index = doubts_satisfaction_counts.index.map(doubts_labels)
+
+# Reorder columns for consistent grouping (Bad, Average, Good)
+doubts_satisfaction_counts = doubts_satisfaction_counts[['Bad', 'Average', 'Good']]
+
+# Create grouped bar chart
+fig = px.bar(
+    doubts_satisfaction_counts,
+    x=doubts_satisfaction_counts.index,
+    y=['Bad', 'Average', 'Good'],
+    barmode='group',  # Use 'group' for grouped bars
+    title='Clearing Doubts with Faculties vs. Online Education Satisfaction',
+    labels={
+        'x': 'Clearing Doubts with Faculties',
+        'value': 'Number of Students',
+        'variable': 'Satisfaction Level'
+    },
+    color_discrete_map={'Bad': 'red', 'Average': 'grey', 'Good': 'blue'} # Assign colors
+)
+
+# Ensure the x-axis order is correct
+fig.update_layout(
+    xaxis={'categoryorder': 'array', 'categoryarray': [doubts_labels[i] for i in sorted(doubts_labels)]}
+)
+
+st.plotly_chart(fig, use_container_width=True)
