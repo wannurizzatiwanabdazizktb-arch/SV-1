@@ -21,4 +21,4 @@ st.write(
 )
 
 # Add the header title
-st.header("Demographic Overview)
+st.header("Demographic Overview")
