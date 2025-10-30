@@ -19,3 +19,6 @@ st.write(
     """This dashboard presents insights from collected data on students’ experiences in online education. Explore the three sections below to learn about performance impact, satisfaction levels, and challenges faced from students during COVID-19.
     """
 )
+
+# Add the header title
+st.header("Demographic Overview)
