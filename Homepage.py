@@ -30,11 +30,8 @@ url = "https://raw.githubusercontent.com/wannurizzatiwanabdazizktb-arch/SV-1/ref
 # Read the dataset
 df = pd.read_csv(url)
 
-# Add the header title
-st.header("Demographic Overview")
-
 # Add the subtitle header
-st.subheader("1. Gender Distribution")
+st.subheader("Demographic Overview")
 
 # Set theme
 pio.templates.default = "plotly_white"
@@ -56,7 +53,7 @@ fig = go.Figure(
 )
 
 fig.update_layout(
-    title="Gender Distribution",
+    title="1. Gender Distribution",
     legend_title="Gender"
 )
 
@@ -77,7 +74,7 @@ fig = go.Figure(
 )
 
 fig.update_layout(
-    title="Level of Education Distribution",
+    title="2. Level of Education Distribution",
     legend_title="Education Level",
     xaxis_title="Education Level",
     yaxis_title="Count"
@@ -97,7 +94,7 @@ fig = go.Figure(
 )
 
 fig.update_layout(
-    title="Age Distribution",
+    title="3. Age Distribution",
     xaxis_title="Age (Years)",
     yaxis_title="Frequency",
     bargap=0.2
@@ -120,7 +117,7 @@ fig = go.Figure(
 )
 
 fig.update_layout(
-    title="Home Location Distribution",
+    title="4. Home Location Distribution",
     xaxis_title="Home Location",
     yaxis_title="Count"
 )
@@ -143,7 +140,7 @@ fig = go.Figure(
 )
 
 fig.update_layout(
-    title="Economic Status Distribution",
+    title="5. Economic Status Distribution",
     legend_title="Economic Class"
 )
 
