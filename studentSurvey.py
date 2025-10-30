@@ -59,7 +59,40 @@ fig.add_annotation(
     font=dict(size=10)
 )
 
-fig.show()
-
 st.plotly_chart(fig, use_container_width=True)
 
+#-----------------------------------------------------------------------------
+
+# Create a cross-tabulation of online interaction mode and satisfaction level
+interaction_satisfaction_counts = pd.crosstab(
+    df['Your interaction in online mode'],
+    df['Your level of satisfaction in Online Education']
+)
+
+# Map interaction levels to descriptive labels for better readability
+interaction_labels = {1: 'Very Low', 2: 'Low', 3: 'Average', 4: 'High', 5: 'Very High'}
+interaction_satisfaction_counts.index = interaction_satisfaction_counts.index.map(interaction_labels)
+
+# Reorder columns for consistent stacking (Bad, Average, Good)
+interaction_satisfaction_counts = interaction_satisfaction_counts[['Bad', 'Average', 'Good']]
+
+# Create stacked bar chart
+fig = px.bar(
+    interaction_satisfaction_counts,
+    x=interaction_satisfaction_counts.index,
+    y=['Bad', 'Average', 'Good'],
+    title='Online Interaction vs. Online Education Satisfaction',
+    labels={
+        'x': 'Your Interaction in Online Mode',
+        'value': 'Number of Students',
+        'variable': 'Satisfaction Level'
+    },
+    color_discrete_map={'Bad': 'red', 'Average': 'grey', 'Good': 'blue'} # Assign colors
+)
+
+# Ensure the x-axis order is correct
+fig.update_layout(
+    xaxis={'categoryorder': 'array', 'categoryarray': [interaction_labels[i] for i in sorted(interaction_labels)]}
+)
+
+st.plotly_chart(fig, use_container_width=True)
