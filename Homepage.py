@@ -22,3 +22,6 @@ st.write(
 
 # Add the header title
 st.header("Demographic Overview")
+
+# Add the subtitle header
+st.subheader("1. Gender Distribution")
