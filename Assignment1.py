@@ -6,7 +6,7 @@ st.set_page_config(
 
 page1 = st.Page('StudentSatisfaction.py', title='Kepuasan Pelajar Dalam Pembelajaran', icon=":material/school:")
 
-page2 = st.Page('PerformanceImpact.py', title='Kesan Dalam Pembelajaran', icon=":material/AssignmentTurnedIn:")
+page2 = st.Page('PerformanceImpact.py', title='Kesan Dalam Pembelajaran', icon=":material/assignment_turned_in:")
 
 home = st.Page('Homepage.py', title='Homepage', default=True, icon=":material/home:")
 
