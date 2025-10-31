@@ -6,13 +6,13 @@ st.set_page_config(
 
 visualise = st.Page('StudentSatisfaction.py', title='Pencapaian Akademik Pelajar', icon=":material/school:")
 
-visualise = st.Page('PerformanceImpact.py', title='Pencapaian Akademik Pelajar', icon=":material/result:")
+visualise1 = st.Page('PerformanceImpact.py', title='Pencapaian Akademik Pelajar', icon=":material/result:")
 
 home = st.Page('Homepage.py', title='Homepage', default=True, icon=":material/home:")
 
 pg = st.navigation(
         {
-            "Menu": [home, visualise, visualise]
+            "Menu": [home, visualise, visualise1]
         }
     )
 
