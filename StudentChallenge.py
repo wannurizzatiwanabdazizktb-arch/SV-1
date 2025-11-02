@@ -14,7 +14,7 @@ fig = px.histogram(
     }
 )
 
-fig.show()
+st.plotly_chart(fig)
 
 
 #---------------------------------------------------------------------------
@@ -35,7 +35,7 @@ fig = px.box(
 )
 
 fig.update_layout(width=600, height=500)
-fig.show()
+st.plotly_chart(fig)
 
 
 #------------------------------------------------------------
@@ -78,4 +78,4 @@ fig.update_layout(
     showlegend=True
 )
 
-fig.show()
+st.plotly_chart(fig)
