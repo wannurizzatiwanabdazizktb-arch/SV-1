@@ -18,6 +18,26 @@ url = "https://raw.githubusercontent.com/wannurizzatiwanabdazizktb-arch/SV-1/ref
 # Read the dataset
 df = pd.read_csv(url)
 
+col1, col2, col3 = st.columns(3)
+
+col1.metric(
+    label="Study Time Impact",
+    value="Higher",
+    help="Longer study duration correlates with better performance."
+)
+
+col2.metric(
+    label="Supervision Benefit",
+    value="Positive",
+    help="Students with supervision are more likely to achieve higher performance."
+)
+
+col3.metric(
+    label="COVID Performance Gap",
+    value="Declined",
+    help="Overall performance dropped during online learning compared to pre-pandemic."
+)
+
 #add subheader
 st.subheader("Does students’ performance get affected during online learning?")
 
