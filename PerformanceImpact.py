@@ -53,3 +53,81 @@ fig = px.line(
 )
 
 st.plotly_chart(fig)
+
+
+fig = px.histogram(
+    df,
+    x='Performance in online',
+    color='Do elderly people monitor you?',
+    barmode='group',        # side-by-side bars instead of overlay
+    histnorm='percent',     # show percentage instead of raw count
+    opacity=0.8,            # bars are opaque enough to differentiate
+    color_discrete_map={
+        'Yes': '#1f77b4',  # Blue for supervised
+        'No': '#d62728'    # Red for not supervised
+    },
+    title='Performance Distribution by Elderly Supervision',
+    labels={'Performance in online':'Online Performance Score', 
+            'Do elderly people monitor you?':'Elderly Supervision'}
+)
+
+fig.update_layout(
+    width=800,
+    height=500,
+    xaxis=dict(dtick=1),    # show all integer score values
+    yaxis_title="Percentage of Students",
+    bargap=0.2              # space between grouped bars
+)
+
+st.plotly_chart(fig)
+
+
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+
+# Create figure
+fig = go.Figure()
+
+# Add traces for each education level
+education_levels = df['Level of Education'].unique()
+
+for i, level in enumerate(education_levels):
+    subset = df[df['Level of Education'] == level]
+
+    # Calculate average study time by performance level
+    avg_study = subset.groupby('Performance in online')['Study time (Hours)'].mean().reset_index()
+
+    fig.add_trace(
+        go.Bar(
+            x=avg_study['Performance in online'],
+            y=avg_study['Study time (Hours)'],
+            name=level,
+            visible=True if i == 0 else False,  # Only first one visible initially
+            hovertemplate='<b>%{x}</b><br>Avg Study Time: %{y:.1f} hrs<extra></extra>',
+            text=[f"{val:.1f}h" for val in avg_study['Study time (Hours)']],
+            textposition='auto'
+        )
+    )
+
+# Create buttons for dropdown
+buttons = []
+for i, level in enumerate(education_levels):
+    buttons.append(
+        dict(
+            label=level,
+            method="update",
+            args=[{"visible": [j == i for j in range(len(education_levels))]},
+                  {"title": f"Average Study Time by Performance: {level}"}]
+        )
+    )
+
+fig.update_layout(
+    title="Average Study Time by Performance: Select Education Level",
+    xaxis_title="Performance in Online",
+    yaxis_title="Average Study Time (Hours)",
+    height=500,
+    width=800,
+    updatemenus=[dict(buttons=buttons, direction="down", x=0.1, y=1.15)]
+)
+
+st.plotly_chart(fig)
