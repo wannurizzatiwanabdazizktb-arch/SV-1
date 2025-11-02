@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
 
 st.header("Analysis of the Impact of Online Learning on Student Performance During COVID-19")
 
@@ -9,6 +11,9 @@ url = "https://raw.githubusercontent.com/wannurizzatiwanabdazizktb-arch/SV-1/ref
 
 # Read the dataset
 df = pd.read_csv(url)
+
+#add subheader
+st.subheader("Does students’ performance get affected during online learning?")
 
 # Mapping traditional marks to 1–10 scale
 traditional_mapping = {
@@ -55,6 +60,9 @@ fig = px.line(
 st.plotly_chart(fig)
 
 
+#add subheader
+st.subheader("Does having someone monitoring you can lead to better education performance?")
+
 fig = px.histogram(
     df,
     x='Performance in online',
@@ -82,8 +90,8 @@ fig.update_layout(
 st.plotly_chart(fig)
 
 
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
+#add subheader
+st.subheader("Does studying more lead to better academic performance?")
 
 # Create figure
 fig = go.Figure()
