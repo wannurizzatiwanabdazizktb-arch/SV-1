@@ -6,7 +6,11 @@ from plotly.subplots import make_subplots
 
 st.header("Analysis of the Impact of Online Learning on Student Performance During COVID-19")
 
-st.write{"""The findings show that online learning does affect student performance due to limited engagement and distractions. Students who receive supervision at home and devote more time to their studies do better. This suggest that habits and surroundings play a crucial role in the success of remote learning.""")
+st.write{
+    """
+    The findings show that online learning does affect student performance due to limited engagement and distractions. Students who receive supervision at home and devote more time to their studies do better. This suggest that habits and surroundings play a crucial role in the success of remote learning.
+    """
+)
 
 # Load CSV from GitHub
 url = "https://raw.githubusercontent.com/wannurizzatiwanabdazizktb-arch/SV-1/refs/heads/main/ONLINE%20EDUCATION%20SYSTEM%20REVIEW.csv"
