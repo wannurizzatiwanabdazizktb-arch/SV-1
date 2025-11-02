@@ -92,6 +92,7 @@ st.plotly_chart(fig)
 st.write(
     """
 The graph shows that students’ performance during COVID-19 is slightly lower compared to before the pandemic. During online learning, the highest score students frequently achieved is around 6, and the maximum score recorded is 8. In contrast, before the pandemic, most students managed to score around 9, with some even reaching the maximum score of 10. This indicates a noticeable performance gap between traditional and online learning environments. These findings support the idea that online learning negatively impacted overall academic performance, likely due to reduced engagement, distractions at home, and limited teacher-student interaction.
+    """
 )
 
 
