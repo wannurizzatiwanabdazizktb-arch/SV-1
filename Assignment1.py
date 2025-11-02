@@ -8,6 +8,8 @@ page1 = st.Page('StudentSatisfaction.py', title='Kepuasan Pelajar Dalam Pembelaj
 
 page2 = st.Page('PerformanceImpact.py', title='Kesan Dalam Pembelajaran', icon=":material/assignment_turned_in:")
 
+page3 = st.Page('StudentChallenge.py', title='Cabaran Dalam Pembelajaran Atas Talian', icon=":material/outlined_flag:")
+
 home = st.Page('Homepage.py', title='Homepage', default=True, icon=":material/home:")
 
 pg = st.navigation(
