@@ -52,7 +52,7 @@ fig.update_layout(
 
 # Add legend explanation
 fig.add_annotation(
-    text="Scale: Red = Bad, Grey = Average, Blue = Good",
+    text="Scale: Red = Good, Grey = Average, Blue = Bad",
     xref="paper", yref="paper",
     x=0, y=-0.2,
     showarrow=False,
