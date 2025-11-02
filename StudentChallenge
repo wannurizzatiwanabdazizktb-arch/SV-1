@@ -1,0 +1,81 @@
+import streamlit as st
+import pandas as pd
+import plotly.express as px
+
+fig = px.histogram(
+    df,
+    x='Performance in online',
+    color='Have separate room for studying?',
+    barmode='group',
+    title='Impact of Having a Study Room on Online Learning Performance',
+    color_discrete_map={
+        'Yes': 'blue',
+        'No': 'red'
+    }
+)
+
+fig.show()
+
+
+#---------------------------------------------------------------------------
+fig = px.box(
+    df,
+    x='Engaged in group studies?',
+    y='Performance in online',
+    title='Online Performance Distribution by Group Study Engagement',
+    labels={
+        'Engaged in group studies?': 'Engaged in Group Studies?',
+        'Performance in online': 'Online Performance Score'
+    },
+    color='Engaged in group studies?',
+    color_discrete_map={
+        'Yes': 'blue',
+        'No': 'red'
+    }
+)
+
+fig.update_layout(width=600, height=500)
+fig.show()
+
+
+#------------------------------------------------------------
+# Group performance to reduce noise
+df['Performance Group'] = pd.cut(
+    df['Performance in online'],
+    bins=[0, 3, 7, 10],
+    labels=['Low', 'Medium', 'High']
+)
+
+# Color scheme
+color_map = {
+    'Low': '#d62728',    # Red
+    'Medium': '#ffcc00', # Yellow
+    'High': '#1f77b4'    # Blue
+}
+
+# Pie chart with facets
+fig = px.pie(
+    df,
+    names='Performance Group',
+    facet_col='Economic status',
+    hole=0.35,
+    title='Online Performance by Economic Status (Grouped)',
+)
+
+# Apply consistent color mapping
+fig.update_traces(
+    marker=dict(colors=[color_map[v] for v in sorted(df['Performance Group'].unique())]),
+    textinfo='percent',
+    hovertemplate='%{label}: %{percent} <extra></extra>'
+)
+
+# Layout improvements
+fig.update_layout(
+    width=950,
+    height=450,
+    title_x=0.5,
+    margin=dict(t=60, l=40, r=40, b=40),
+    showlegend=True
+)
+
+fig.show()
