@@ -14,7 +14,7 @@ home = st.Page('Homepage.py', title='Homepage', default=True, icon=":material/ho
 
 pg = st.navigation(
         {
-            "Menu": [home, page1, page2]
+            "Menu": [home, page1, page2, page3]
         }
     )
 
