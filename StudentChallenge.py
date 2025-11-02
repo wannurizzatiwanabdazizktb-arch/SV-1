@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-st.header("Analysis of Student's Challenge during Online Learning")
+st.header("Analysis of Students’ Challenges and Learning Performance in Online Education")
 
 # Load CSV from GitHub
 url = "https://raw.githubusercontent.com/wannurizzatiwanabdazizktb-arch/SV-1/refs/heads/main/ONLINE%20EDUCATION%20SYSTEM%20REVIEW.csv"
