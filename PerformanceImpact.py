@@ -181,3 +181,9 @@ fig.update_layout(
 )
 
 st.plotly_chart(fig)
+
+st.write(
+    """
+    From the graph, it gives insight where the time taken for study is different across different level of education. As for now, students from post graduate and school require 5.3 hours to achieve good performance in online learning. The less time take to study will give the lower performance and this is apply to post-graduate students. Meanwhile, school and undergraduate didn't require much time as one of their student did study more than 3 hours but still get lower performance.The bar chart shows that students who are monitored by a guardian tend to achieve average to good performance in online learning, with approximately 24% scoring around 6.     
+    """
+)
