@@ -125,6 +125,12 @@ fig.update_layout(
 
 st.plotly_chart(fig)
 
+st.write(
+    """
+    The bar chart shows that students who are monitored by a guardian tend to achieve average to good performance in online learning, with approximately 24% scoring around 6. However, the performance gap compared to students without supervision is only about 2%. This suggests that while guidance offers some positive support, it is not the primary factor influencing high academic achievement during online learning.    
+    """
+)
+
 
 #add subheader
 st.subheader("Does studying more lead to better academic performance?")
