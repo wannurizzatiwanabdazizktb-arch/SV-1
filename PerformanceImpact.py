@@ -31,15 +31,15 @@ col1.metric(
 col2.metric(
     label="Supervision Benefit",
     value="Positive",
-    help="Students with supervision are more likely to achieve higher performance.,
-    border=True"
+    help="Students with supervision are more likely to achieve higher performance.",
+    border=True
 )
 
 col3.metric(
     label="COVID Performance Gap",
     value="Declined",
-    help="Overall performance dropped during online learning compared to pre-pandemic.,
-    border=True"
+    help="Overall performance dropped during online learning compared to pre-pandemic.",
+    border=True
 )
 
 #add subheader
