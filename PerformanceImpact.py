@@ -23,19 +23,23 @@ col1, col2, col3 = st.columns(3)
 col1.metric(
     label="Study Time Impact",
     value="Higher",
-    help="Longer study duration correlates with better performance."
+    help="Longer study duration correlates with better performance.", 
+    border=True
+    
 )
 
 col2.metric(
     label="Supervision Benefit",
     value="Positive",
-    help="Students with supervision are more likely to achieve higher performance."
+    help="Students with supervision are more likely to achieve higher performance.,
+    border=True"
 )
 
 col3.metric(
     label="COVID Performance Gap",
     value="Declined",
-    help="Overall performance dropped during online learning compared to pre-pandemic."
+    help="Overall performance dropped during online learning compared to pre-pandemic.,
+    border=True"
 )
 
 #add subheader
