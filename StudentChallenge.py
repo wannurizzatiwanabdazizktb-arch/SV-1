@@ -16,7 +16,21 @@ url = "https://raw.githubusercontent.com/wannurizzatiwanabdazizktb-arch/SV-1/ref
 # Read the dataset
 df = pd.read_csv(url)
 
+col1, col2 = st.columns(2)
 
+col1.metric(
+    label="Dedicated Study Room",
+    value="Majority",
+    help="Most students who achieved good online performance had their own study room.",
+    border=True
+)
+
+col2.metric(
+    label="Group Study Engagement",
+    value="Positive",
+    help="Participating in group studies is positively associated with higher online performance scores.",
+    border=True
+)
 
 #------------------------------------------------------------------------------
 fig = px.histogram(
