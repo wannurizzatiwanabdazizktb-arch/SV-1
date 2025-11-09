@@ -4,11 +4,19 @@ import plotly.express as px
 
 st.header("Analysis of Students’ Challenges and Learning Performance in Online Education")
 
+st.write(
+    """
+    During the COVID-19 pandemic, students faced several challenges that affected their learning performance in online education. Factors such as having a dedicated study room, economic status, and engagement in group studies influenced their ability to focus, access learning materials, and interact effectively with peers which ultimately shaping their overall academic outcomes in online learning.
+    """
+)
+
 # Load CSV from GitHub
 url = "https://raw.githubusercontent.com/wannurizzatiwanabdazizktb-arch/SV-1/refs/heads/main/ONLINE%20EDUCATION%20SYSTEM%20REVIEW.csv"
 
 # Read the dataset
 df = pd.read_csv(url)
+
+
 
 #------------------------------------------------------------------------------
 fig = px.histogram(
