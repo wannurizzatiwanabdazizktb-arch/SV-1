@@ -13,6 +13,29 @@ st.write(
 # Load CSV from GitHub
 url = "https://raw.githubusercontent.com/wannurizzatiwanabdazizktb-arch/SV-1/refs/heads/main/ONLINE%20EDUCATION%20SYSTEM%20REVIEW.csv"
 
+col1, col2, col3 = st.columns(3)
+
+col1.metric(
+    label="Internet Facility Satisfaction",
+    value="High",
+    help="Students show higher satisfaction when internet connectivity is excellent.",
+    border=True
+)
+
+col2.metric(
+    label="Online Interaction Impact",
+    value="Moderate–High",
+    help="Satisfaction levels improve when students interact more during online classes.",
+    border=True
+)
+
+col3.metric(
+    label="Faculty Accessibility",
+    value="Moderate–High",
+    help="Students report better satisfaction when they can easily reach lecturers or faculties online.",
+    border=True
+)
+
 # Read the dataset
 df = pd.read_csv(url)
 
