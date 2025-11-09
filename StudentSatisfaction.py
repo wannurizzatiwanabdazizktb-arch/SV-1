@@ -4,6 +4,12 @@ import plotly.express as px
 
 st.header("Analysis of Students’ Satisfaction with Online Learning During COVID-19")
 
+st.write(
+    """
+    Student satisfaction during online learning became a critical concern throughout the COVID-19 period, as traditional face-to-face teaching was replaced with digital platforms. Satisfaction levels were largely influenced by factors including internet connectivity, communication with lecturers, and opportunities for interaction. These factors collectively shaped the quality and effectiveness of the learning process.
+    """
+)
+
 # Load CSV from GitHub
 url = "https://raw.githubusercontent.com/wannurizzatiwanabdazizktb-arch/SV-1/refs/heads/main/ONLINE%20EDUCATION%20SYSTEM%20REVIEW.csv"
 
