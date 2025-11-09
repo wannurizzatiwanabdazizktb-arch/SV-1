@@ -93,6 +93,12 @@ fig.add_annotation(
 
 st.plotly_chart(fig, use_container_width=True)
 
+st.writes(
+    """
+    The graph indicates that students with excellent internet connectivity report the highest satisfaction with online learning with average score of 2.09, while those with very poor connectivity report the lowest satisfaction of 1.59. This demonstrates a clear link between internet quality and the perceived effectiveness of online education which highlight the importance of reliable internet for student engagement and satisfaction.
+    """
+)
+
 #-----------------------------------------------------------------------------
 
 # Create a cross-tabulation of online interaction mode and satisfaction level
