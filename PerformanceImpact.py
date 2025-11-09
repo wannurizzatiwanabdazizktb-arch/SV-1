@@ -190,6 +190,7 @@ st.plotly_chart(fig)
 
 st.write(
     """
-    From the graph, it gives insight where the time taken for study is different across different levels of education. As for now, students from postgraduate and school require around 5.3 hours to achieve good performance in online learning. The less time taken to study results in lower performance, and this applies more noticeably to postgraduate students. Meanwhile, school and undergraduate students do not require as many hours, as some of them studied less than 3 hours but still managed to achieve high performance. This concludes that study time influences performance differently depending on academic level. Higher academic stages require more study hours, while younger students may perform well with shorter study durations, possibly due to less complex content .     
-    """
+From the graph, we can observe that the amount of study time required to achieve good performance varies across different education levels. Postgraduate students generally need around 5.3 hours of study time to reach higher performance in online learning, and studying less than this often results in lower scores. For school and undergraduate students, studying more than 3 hours is still not enough to achieve high performance. Based on the data, school students need at least 4.1 hours, while undergraduate students require at least 4.5 hours of study time to obtain good results.
+
+This suggests that study time affects academic performance differently depending on the level of education. The higher the education level, the more study hours are typically needed due to increased content complexity. Additionally, the findings indicate that consistent study time is a strong contributor to performance in online learning, although it may still be influenced by other factors such as environment, motivation, and learning engagement.    """
 )
