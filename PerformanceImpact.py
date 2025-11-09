@@ -91,7 +91,13 @@ st.plotly_chart(fig)
 
 st.write(
     """
-The graph shows that students’ performance during COVID-19 is slightly lower compared to before the pandemic. During online learning, the highest score students frequently achieved is around 6, and the maximum score recorded is 8. In contrast, before the pandemic, most students managed to score around 9, with some even reaching the maximum score of 10. This indicates a noticeable performance gap between traditional and online learning environments. These findings support the idea that online learning negatively impacted overall academic performance, likely due to reduced engagement, distractions at home, and limited teacher-student interaction.
+The graphs show a noticeable decline in student performance during online learning across all education levels. Before COVID-19, the most frequent score among undergraduate and school students was 9, indicating strong overall performance. During the pandemic, this most frequent score dropped to 6, showing reduced academic outcomes.
+
+For postgraduate students, the most common performance score decreased slightly from 8 before COVID-19 to 7 during online learning, suggesting that even advanced learners were affected.
+
+Although some students still achieved the maximum score of 10 during online learning, the number of students doing so decreased significantly for undergraduates from 132 to 71 and school students from 17 to 3. This drop indicates that high academic achievement became less common during remote education.
+
+Overall, these findings support the conclusion that online learning negatively impacted student performance due to factors such as reduced engagement, increased home distractions, and weaker teacher-student interaction.
     """
 )
 
@@ -184,6 +190,6 @@ st.plotly_chart(fig)
 
 st.write(
     """
-    From the graph, it gives insight where the time taken for study is different across different level of education. As for now, students from post graduate and school require 5.3 hours to achieve good performance in online learning. The less time take to study will give the lower performance and this is apply to post-graduate students. Meanwhile, school and undergraduate didn't require much time as one of their student did study more than 3 hours but still get lower performance.The bar chart shows that students who are monitored by a guardian tend to achieve average to good performance in online learning, with approximately 24% scoring around 6.     
+    From the graph, it gives insight where the time taken for study is different across different levels of education. As for now, students from postgraduate and school require around 5.3 hours to achieve good performance in online learning. The less time taken to study results in lower performance, and this applies more noticeably to postgraduate students. Meanwhile, school and undergraduate students do not require as many hours, as some of them studied less than 3 hours but still managed to achieve high performance. This concludes that study time influences performance differently depending on academic level. Higher academic stages require more study hours, while younger students may perform well with shorter study durations, possibly due to less complex content .     
     """
 )
