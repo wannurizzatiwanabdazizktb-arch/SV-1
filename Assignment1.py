@@ -4,7 +4,7 @@ st.set_page_config(
     page_title="Online Learning Survey"
 )
 
-page1 = st.Page('StudentSatisfaction.py', title='Student's Satisfaction in Online Learning', icon=":material/thumb_up_off_alt:")
+page1 = st.Page('StudentSatisfaction.py', title='Students Satisfaction in Online Learning', icon=":material/thumb_up_off_alt:")
 
 page2 = st.Page('PerformanceImpact.py', title='Impact of Online Learning', icon=":material/assignment_turned_in:")
 
