@@ -16,6 +16,9 @@ url = "https://raw.githubusercontent.com/wannurizzatiwanabdazizktb-arch/SV-1/ref
 # Read the dataset
 df = pd.read_csv(url)
 
+#add subheader
+st.subheader("Are students satisfied with internet facilities during online learning?")
+
 # Map satisfaction levels to numerical values
 satisfaction_mapping = {'Bad': 1, 'Average': 2, 'Good': 3}
 df['Satisfaction_Score'] = df['Your level of satisfaction in Online Education'].map(satisfaction_mapping)
