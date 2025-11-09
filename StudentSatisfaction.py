@@ -101,6 +101,9 @@ st.write(
 
 #-----------------------------------------------------------------------------
 
+#add subheader
+st.subheader("Does higher interaction in online classes lead to greater student satisfaction?")
+
 # Create a cross-tabulation of online interaction mode and satisfaction level
 interaction_satisfaction_counts = pd.crosstab(
     df['Your interaction in online mode'],
@@ -135,7 +138,16 @@ fig.update_layout(
 
 st.plotly_chart(fig, use_container_width=True)
 
+st.write(
+    """
+    The graph shows a clear positive relationship between students’ online interaction and their satisfaction with online learning. Students with Very High interaction report the highest satisfaction with 68 out of 93 students indicating ‘Good’ satisfaction. Conversely, students with Very Low interaction have the lowest satisfaction with 86 out of 129 students reporting ‘Bad’ satisfaction. Those with Average interaction form the largest group consist of 433 students, where most report neutral satisfaction. This demonstrates that higher engagement in online classes correlates with higher satisfaction which emphasise the importance of active participation for a better online learning experience.
+    """
+)
+
 # --------------------------------------------------------------------
+
+#add subheader
+st.subheader("Does having quick and easy communication with faculty improve students’ satisfaction in online learning?")
 
 # Create a cross-tabulation of clearing doubts and satisfaction level
 doubts_satisfaction_counts = pd.crosstab(
@@ -171,3 +183,9 @@ fig.update_layout(
 )
 
 st.plotly_chart(fig, use_container_width=True)
+
+st.write(
+    """
+    The graph shows a positive relationship between students’ access to faculty and their satisfaction with online learning. Students with very high access to faculty report good satisfaction, with approximately 64 students in this group. Those with very low access are mostly dissatisfied, with around 102 students reporting bad satisfaction. Most students fall in the middle, where 112 students with low access, 246 students with average access, and 102 students with high access report average satisfaction. This indicates that better access to faculty supports higher student satisfaction and emphasizes the importance of responsive communication in online learning.
+    """
+)
