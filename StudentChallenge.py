@@ -130,7 +130,7 @@ fig.update_traces(
 fig.update_layout(
     width=950,
     height=450,
-    title_x=0.5,
+    title_x=0,
     margin=dict(t=60, l=40, r=40, b=40),
     showlegend=True
 )
