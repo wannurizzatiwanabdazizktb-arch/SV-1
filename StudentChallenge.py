@@ -135,8 +135,8 @@ fig.update_layout(
     showlegend=True
 )
 
-# Center facet titles
-fig.for_each_annotation(lambda a: a.update(xanchor='center'))
+# Move facet titles (economic status labels) to the left
+fig.for_each_annotation(lambda a: a.update(xanchor='left', x=a.x - 0.07))
 
 st.plotly_chart(fig)
 
