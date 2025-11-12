@@ -33,6 +33,9 @@ col2.metric(
 )
 
 #------------------------------------------------------------------------------
+
+st.subheader("Does not having a study room could be a reason of bad performance in online learning?")
+
 fig = px.histogram(
     df,
     x='Performance in online',
@@ -47,8 +50,19 @@ fig = px.histogram(
 
 st.plotly_chart(fig)
 
+st.write(
+    """
+    The bar chart illustrates the impact of having a separate study room on students’ online learning performance. Students with a dedicated study room generally perform better, with noticeably higher counts in the mid to high-performance range scores 6–8. For instance, around 140 students with a study room achieved a performance score of 6 compared to fewer than 100 students without one.
+
+However, while having a study room seems to support better concentration and productivity, the difference at higher performance levels of score 10 is relatively small between the two groups. This suggests that while the learning environment contributes positively to academic performance, other factors—such as motivation, teaching quality, or time management may also play important roles in determining success in online learning.
+    """
+)
+
 
 #---------------------------------------------------------------------------
+
+st.subheader("Does not joining study group can influence the performance in online learning?")
+
 fig = px.box(
     df,
     x='Engaged in group studies?',
@@ -68,8 +82,20 @@ fig = px.box(
 fig.update_layout(width=600, height=500)
 st.plotly_chart(fig)
 
+st.write(
+    """
+    The box plot compares online learning performance between students who participated in group studies and those who did not. Overall, both groups display a similar median performance score of around 7, indicating that group study participation does not drastically alter median outcomes.
+
+However, students engaged in group studies show a slightly narrower interquartile range (IQR), suggesting more consistent performance among this group. In contrast, those who did not join group studies have a wider spread of scores, indicating greater variability where some performed very well, while others scored quite low.
+
+This implies that group study engagement may help stabilize performance levels and reduce extreme variations, even if it does not significantly raise the overall median performance.
+    """
+)
 
 #------------------------------------------------------------
+
+st.subheader("Does economic status affect the performance in online learning?")
+
 # Group performance to reduce noise
 df['Performance Group'] = pd.cut(
     df['Performance in online'],
@@ -110,3 +136,11 @@ fig.update_layout(
 )
 
 st.plotly_chart(fig)
+
+st.writ(
+    """
+    The bar chart shows that students from rich families exhibit a mixed and uneven performance pattern in online learning. About 40% of them achieved high performance, yet around 50% also fell into the low-performance category, with only a small portion of 10% in the medium range. This suggests that wealth alone does not guarantee consistent academic success—other factors, such as motivation or learning habits, may strongly influence outcomes.
+
+In contrast, students from middle-class and poor backgrounds display more stable results with the majority performing at a medium level approximately 58% and 57% respectively. This indicates that while limited resources may constrain top performance, these groups tend to show steadier and more balanced achievement overall.
+    """
+)
