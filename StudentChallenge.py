@@ -137,7 +137,7 @@ fig.update_layout(
 
 st.plotly_chart(fig)
 
-st.writ(
+st.write(
     """
     The bar chart shows that students from rich families exhibit a mixed and uneven performance pattern in online learning. About 40% of them achieved high performance, yet around 50% also fell into the low-performance category, with only a small portion of 10% in the medium range. This suggests that wealth alone does not guarantee consistent academic success—other factors, such as motivation or learning habits, may strongly influence outcomes.
 
