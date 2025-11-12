@@ -135,6 +135,9 @@ fig.update_layout(
     showlegend=True
 )
 
+# Center facet titles
+fig.for_each_annotation(lambda a: a.update(xanchor='center'))
+
 st.plotly_chart(fig)
 
 st.write(
